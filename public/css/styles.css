@@ -1,7 +1,273 @@
+:root {
+  --bg-color: #ffffff;
+  --bg-soft: #f5f5f7;
+  --text-color: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --border-color: #d2d2d7;
+  --primary-accent: #0071e3;
+  --danger-accent: #e11837;
+}
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.5;
+  background-color: var(--bg-color);
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/*Styling header*/
+#top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  z-index: 100;
+  background-color: white;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+.siteName a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 10000;
+}
+#tools a {
+  text-decoration: none;
+  color: black;
+  font-size: 19px;
+  z-index: 10000;
+}
+.hamburger-menus {
+  width: 32px;
+  height: 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 10000;
+}
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  display: block;
+}
+.line1 {
+  transform-origin: 0% 0%;
+  transition: transform .3s ease;
+}
+.line2 {
+  transition: transform .3s ease;
+}
+.line3 {
+  transform-origin: 0% 100%;
+  transition: transform .3s ease;
+}
+header.menu-open .line1 {
+  transform: rotate(45deg);
+}
+header.menu-open .line2 {
+  transform: scaleY(0);
+}
+header.menu-open .line3 {
+  transform: rotate(-45deg);
+}
+
+/*Styling Navigation*/
+nav {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  transform: translateY(-100%);
+  transition: transform .5s ease;
+  z-index: 5;
+}
+
+header.menu-open ~ nav {
+  transform: translateY(0);
+}
+/*Handling mobile menu*/
+nav.menu-transition {
+  transition: transform .5s ease;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+body.no-transition, body.no-transition * {
+  transition: none;
+}
+nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+}
+nav ul li {
+  width: 100%;
+}
+nav ul li a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid rgb(167, 167, 167);
+  padding: 12px 0;
+}
+nav ul li:last-child a {
+  border: none;
+}
+nav ul li a:hover {
+  color: var(--primary-accent);
+}
+/*Syling hero section*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 1;
+}
+.hero-content {
+  position: absolute;    
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  gap: 1rem;              
+  width: 100%;
+  padding: 0 1rem;         
+}
+
+.hero-content h1 {
+  font-size: 26px;
+  color: white;
+  text-shadow:
+  1px 1px 2px rgba(0, 0, 0, 0.7),
+  2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.hero-sub-content {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  text-align: center;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  color: white;
+}
+
+
+#cta-button {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  background-color: #00458a;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#cta-button:hover {
+  background-color: #1a8cff;
+  color: black;
+}
+/*Styling content of Home page*/
+.reviews {
+  grid-area: reviews;
+}
+.upgrades {
+  grid-area: upgrade;
+}
+.car-details {
+  padding: 1rem 1.2rem;
+  margin-top: 1.5rem;
+  display: grid;
+  row-gap: 2rem;
+  grid-template-areas: 
+  'reviews'
+  'upgrade';
+}
+.reviews ul {
+  padding: 1rem;
+}
+.available-upgrade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 1rem;
+}
+figure .imageContainer {
+  background-color: #0a7f9c;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+}
+.imageContainer img{
+  width: 50px;
+  height: 50px;
+}
+figure figcaption {
+  text-align: center;
+}
