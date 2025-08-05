@@ -29,7 +29,6 @@ Util.buildClassificationGrid = async function(data){
                     <img src="${vehicle.inv_thumbnail}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model} on CSE Motors">
                 </a>
                 <div class="namePrice">
-                    <hr>
                     <h2>
                         <a href="/inv/detail/${vehicle.inv_id}" title="View ${vehicle.inv_make} ${vehicle.inv_model} details">
                         ${vehicle.inv_make} ${vehicle.inv_model}
