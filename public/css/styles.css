@@ -273,50 +273,60 @@ figure figcaption {
 }
 
 /*Stying car inventory*/
-
 .vehicle-title {
   padding: 1rem;
-  font-size: 28px;
 }
 #inv-display {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
   list-style: none;
-  gap: 3rem;
-  padding: 10px 1rem; 
-  max-width: 1000px;
-  margin: 0 auto;
+  margin: 0;
 }
+
 #inv-display li {
-  border: 2px solid rgb(184, 184, 184);
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
 }
+
+#inv-display li:hover {
+  transform: translateY(-4px);
+}
+
 #inv-display li img {
   width: 100%;
-  height: 250px;
-  border-radius: 5px 5px 0 0;
-  flex-shrink: 0;
-  flex-grow: 0;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  transition: border-radius 0.3s ease;
 }
+
 #inv-display li .namePrice {
-  flex: 1 1 0;
   text-align: center;
+  padding: 1rem;
 }
+
 #inv-display li .namePrice h2 {
-  font-size: 18px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
-hr {
-  border: none;
-  height: 3px;
-  background-color: #007BFF;
-}
+
 #inv-display li .namePrice span {
   display: block;
-  padding: 5px 0 1.5rem 0;
   font-weight: bold;
+  color: #444;
+  margin-top: 0.25rem;
 }
+
+
 /*styling error section*/
 .error-section {
   max-width: 100%;
