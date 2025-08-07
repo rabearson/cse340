@@ -229,6 +229,24 @@ picture img {
   background-color: #1a8cff;
   color: black;
 }
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary-accent);
+  color: white;
+  width: 100%;
+  box-shadow: 4px 0 4px rgba(0, 0, 0, .5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer > a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.12rem;
+}
 /*Styling content of Home page*/
 .reviews {
   grid-area: reviews;
@@ -329,26 +347,61 @@ figure figcaption {
 
 /*styling error section*/
 .error-section {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  background-color: rgba(206, 109, 109, 0.801);
-  flex-direction: column;
-  position: relative;
+  display: grid;
+  grid-template-areas: 
+    'detail'
+    'image'
+  ;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50vh 50vh;
+  height: 100vh;
 }
 
 .error-section img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: image;
   width: 100%;
   height: 100%;
   display: block;
 }
-.error-message {
-  position: relative;
-  z-index: 5;
+.error-detail {
+  grid-area: detail;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: #a80000;
+  background-color: #ffd6d6;
+}
+.error-detail p {
+  max-width: 400px;
+  text-align: center;
   font-size: 1.2rem;
+}
+
+/* Style for car details section */
+.car-detail-section {
+  padding: 1rem 10px;
+  background-color: var(--bg-color);
+}
+.inv-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.5rem;
+}
+.inv-detail img {
+  display: block;
+  width: 100%; 
+  aspect-ratio: 4 / 3;
+}
+.vehicle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.info-bg {
+  background-color: var(--bg-soft);
+}
+.all-para {
+  padding: 10px;
 }
