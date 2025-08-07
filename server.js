@@ -13,6 +13,7 @@ const expressLayouts = require("express-ejs-layouts")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require("./utilities/index")
+const errorRoute = require("./routes/errorRoute")
 
 
 
@@ -35,6 +36,9 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 
 //Inventory routes
 app.use("/inv", inventoryRoute)
+
+//Error route
+app.use("/", errorRoute)
 
 
 // File Not Found Route - must be last route in list
