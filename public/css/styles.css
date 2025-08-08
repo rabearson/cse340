@@ -45,6 +45,7 @@ h6 {
   width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
 }
+
 .siteName a {
   display: inline-block;
   color: black;
@@ -53,12 +54,14 @@ h6 {
   font-weight: bold;
   z-index: 10000;
 }
+
 #tools a {
   text-decoration: none;
   color: black;
   font-size: 19px;
   z-index: 10000;
 }
+
 .hamburger-menus {
   width: 32px;
   height: 26px;
@@ -68,29 +71,36 @@ h6 {
   flex-direction: column;
   z-index: 10000;
 }
+
 .line {
   width: 100%;
   height: 4px;
   background-color: black;
   display: block;
 }
+
 .line1 {
   transform-origin: 0% 0%;
   transition: transform .3s ease;
 }
+
 .line2 {
   transition: transform .3s ease;
 }
+
 .line3 {
   transform-origin: 0% 100%;
   transition: transform .3s ease;
 }
+
 header.menu-open .line1 {
   transform: rotate(45deg);
 }
+
 header.menu-open .line2 {
   transform: scaleY(0);
 }
+
 header.menu-open .line3 {
   transform: rotate(-45deg);
 }
@@ -108,19 +118,24 @@ nav {
   z-index: 5;
 }
 
-header.menu-open ~ nav {
+header.menu-open~nav {
   transform: translateY(0);
 }
+
 /*Handling mobile menu*/
 nav.menu-transition {
   transition: transform .5s ease;
 }
+
 body.no-scroll {
   overflow: hidden;
 }
-body.no-transition, body.no-transition * {
+
+body.no-transition,
+body.no-transition * {
   transition: none;
 }
+
 nav ul {
   width: 100%;
   height: 100%;
@@ -130,10 +145,12 @@ nav ul {
   flex-direction: column;
   list-style-type: none;
 }
+
 nav ul li {
   width: 100%;
 }
-nav ul li a{
+
+nav ul li a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -145,12 +162,15 @@ nav ul li a{
   border-bottom: 1px solid rgb(167, 167, 167);
   padding: 12px 0;
 }
+
 nav ul li:last-child a {
   border: none;
 }
+
 nav ul li a:hover {
   color: var(--primary-accent);
 }
+
 /*Syling hero section*/
 .hero {
   position: relative;
@@ -161,6 +181,7 @@ nav ul li a:hover {
   align-items: center;
   overflow: hidden;
 }
+
 picture img {
   position: absolute;
   top: 0;
@@ -169,8 +190,9 @@ picture img {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  
+
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -180,8 +202,9 @@ picture img {
   background-color: rgba(0, 0, 0, .2);
   z-index: 1;
 }
+
 .hero-content {
-  position: absolute;    
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -189,24 +212,26 @@ picture img {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;      
-  gap: 1rem;              
+  align-items: center;
+  gap: 1rem;
   width: 100%;
-  padding: 0 1rem;         
+  padding: 0 1rem;
 }
 
 .hero-content h1 {
   font-size: 26px;
   color: white;
   text-shadow:
-  1px 1px 2px rgba(0, 0, 0, 0.7),
-  2px 2px 4px rgba(0, 0, 0, 0.5);
+    1px 1px 2px rgba(0, 0, 0, 0.7),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+
 .hero-sub-content {
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
   text-align: center;
 }
+
 .hero-content p {
   font-size: 1.1rem;
   color: white;
@@ -242,36 +267,43 @@ footer {
   justify-content: center;
   align-items: center;
 }
-footer > a {
+
+footer>a {
   text-decoration: none;
   color: white;
   font-size: 1.12rem;
 }
+
 /*Styling content of Home page*/
 .reviews {
   grid-area: reviews;
 }
+
 .upgrades {
   grid-area: upgrade;
 }
+
 .car-details {
   padding: 1rem 1.2rem;
   margin-top: 1.5rem;
   display: grid;
   row-gap: 2rem;
-  grid-template-areas: 
-  'reviews'
-  'upgrade';
+  grid-template-areas:
+    'reviews'
+    'upgrade';
 }
+
 .reviews ul {
   padding: 1rem;
 }
+
 .available-upgrade {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 1rem;
 }
+
 figure .imageContainer {
   background-color: #0a7f9c;
   padding: 1rem;
@@ -282,10 +314,12 @@ figure .imageContainer {
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
-.imageContainer img{
+
+.imageContainer img {
   width: 50px;
   height: 50px;
 }
+
 figure figcaption {
   text-align: center;
 }
@@ -294,6 +328,7 @@ figure figcaption {
 .vehicle-title {
   padding: 1rem;
 }
+
 #inv-display {
   display: grid;
   grid-template-columns: 1fr;
@@ -348,7 +383,7 @@ figure figcaption {
 /*styling error section*/
 .error-section {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     'detail'
     'image'
   ;
@@ -363,6 +398,7 @@ figure figcaption {
   height: 100%;
   display: block;
 }
+
 .error-detail {
   grid-area: detail;
   display: flex;
@@ -373,6 +409,7 @@ figure figcaption {
   color: #a80000;
   background-color: #ffd6d6;
 }
+
 .error-detail p {
   max-width: 400px;
   text-align: center;
@@ -384,24 +421,183 @@ figure figcaption {
   padding: 1rem 10px;
   background-color: var(--bg-color);
 }
+
 .inv-detail {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1.5rem;
 }
+
 .inv-detail img {
   display: block;
-  width: 100%; 
+  width: 100%;
   aspect-ratio: 4 / 3;
 }
+
 .vehicle-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .info-bg {
   background-color: var(--bg-soft);
 }
+
 .all-para {
   padding: 10px;
 }
+
+/*Style for login && register form*/
+.loginForm,
+.registerForm {
+  width: 100%;
+}
+
+.loginForm h1, .registerForm h1{
+  padding: 1rem;
+  text-align: center;
+}
+
+#loginForm {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 10px 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#loginForm label, #registerForm label {
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+#loginForm input,
+#loginForm button,
+#registerForm input,
+#registerForm button {
+  margin-bottom: 2rem;
+  padding: 12px 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+#loginForm input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+#loginForm input[type="email"] {
+  background-image: url("/images/user-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 0 center;
+  padding-left: 30px;
+}
+
+#loginForm input[type="password"] {
+  background-image: url("/images/lock-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 0 center;
+  padding-left: 30px;
+
+}
+
+#loginForm button, #registerForm button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  transition: color .3s ease, background-color .3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#loginForm button:hover, #registerForm button:hover {
+  background-color: #2994ff;
+  color: #000000;
+
+}
+
+ul.pwd-criteria {
+  padding: 10px;
+  margin-bottom: 2rem;
+  list-style: none;
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+ul.pwd-criteria::before {
+  content: "🔐";
+  display: block;
+  text-align: center;
+  font-size: 25px;
+}
+
+ul.pwd-criteria li {
+  font-size: 14px;
+}
+
+li.invalid::before {
+  content: "❌";
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 13px;
+}
+
+li.valid::before {
+  content: "✅";
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 13px;
+}
+
+#registerForm {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 10px 2rem;
+  display: flex;
+  flex-direction: column;
+  /* border-radius: 18px; */
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+#registerForm input {
+  outline: none;
+}
+#registerForm span {
+  background-color: #000000;
+  color: white;
+  padding: 10px 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .5s ease, background-color .5s ease, color .5s ease;
+  
+}
+#registerForm span:active {
+  transform: scale(0.99);
+  background-color: #292929;
+  color: #d9d9d9;
+}
+  ul.notice {
+    background-color: #16d0ba;
+    text-align: center;
+    list-style: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.12em;
+    font-weight: 700;
+  }
+  ul.error {
+    background-color: #f9c3ef;
+    text-align: center;
+    list-style: none;
+    padding: 1rem;
+    color: #7e0202;
+    width: 100%;
+    font-size: 1.12em;
+    font-weight: 700;
+  }

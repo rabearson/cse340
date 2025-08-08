@@ -1,0 +1,12 @@
+<section class="loginForm">
+    <h1><%- title %></h1>
+    <%- messages() %>
+    <form action="" id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" name="account_email" id="email" required placeholder="Enter email">
+        <label for="password">Password</label>
+        <input type="password" name="account_password" id="password" required placeholder="Enter password" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}$">
+        <button type="submit">Login</button>
+        <p>No account? <a href="/account/registration">Sign-up</a></p>
+    </form>
+</section>
