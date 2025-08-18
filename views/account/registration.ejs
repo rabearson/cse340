@@ -8,7 +8,7 @@
         <label for="email">Email Address</label>
         <input type="email" name="account_email" id="email" required>
         <label for="password">Password</label>
-        <input type="password" name="account_password" id="password">
+        <input type="password" name="account_password" id="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
         <ul class="pwd-criteria">
             <li class="invalid character">Password must be minimum of 12 characters</li>
             <li class="invalid uppercase">Password must include 1 capital letter</li>
