@@ -5,7 +5,8 @@ baseController.buildHome = async function (req, res) {
     let nav = await utilities.getNav()
     res.render("index", {
         title: "Home",
-        nav
+        nav,
+        errors: null,
     })
 }
 
