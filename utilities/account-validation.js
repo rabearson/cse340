@@ -1,5 +1,6 @@
 const utilities = require("./index")
 const {body, validationResult} = require("express-validator")
+const accountModel = require("../models/account-model")
 const validate = {}
 
 validate.registrationRules = () => {
@@ -27,7 +28,13 @@ validate.registrationRules = () => {
         .notEmpty()
         .isEmail()
         .normalizeEmail()
-        .withMessage("A valid email is required."),
+        .withMessage("A valid email is required.")
+        .custom(async (account_email) => {
+            const emailExist = await accountModel.checkExistingEMail(account_email)
+            if(emailExist){
+                throw new Error("Email exists. Please log in or use different email")
+            }
+        }),
 
         //password is required and must be strong password
         body("account_password")
@@ -65,6 +72,44 @@ validate.checkRegData = async(req, res, next) => {
         return
     }
     next()
+}
+
+validate.loginRules = function() {
+    return [
+        body("account_email")
+        .trim()
+        .escape()
+        .notEmpty()
+        .isEmail()
+        .normalizeEmail()
+        .withMessage("Please provide valid email"),
+
+        body("account_password")
+        .trim()
+        .notEmpty()
+        .isStrongPassword({
+            minLength: 12,
+            minLowercase: 1,
+            minLowercase: 1,
+            minNumbers: 1,
+            minSymbols: 1,
+        })
+        .withMessage("Please provide correct password")
+    ]
+}
+
+validate.checkLogData = async (req, res, next) => {
+    const {account_email} = req.body
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        let nav = await utilities.getNav()
+        res.render("account/login", {
+            errors,
+            nav,
+            title: "Login",
+            account_email,
+        })
+    }
 }
 
 module.exports = validate

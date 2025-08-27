@@ -18,8 +18,8 @@ async function buildLogin(req, res, next) {
 * *************************************** */
 async function buildRegister(req, res, next){
     let nav = await utilities.getNav()
-    res.render("account/registration", {
-        title: "Register",
+    res.render("account/register", {
+        title: "Registration",
         nav,
         errors: null,
     })
@@ -46,7 +46,7 @@ async function registerAccount(req, res) {
     })
     } else {
         req.flash("error", "Sorry, the registration failed")
-        res.status(501).render("account/registration", {
+        res.status(501).render("account/register", {
             title: "Registration",
             nav,
         })

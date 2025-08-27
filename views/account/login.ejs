@@ -1,12 +1,19 @@
 <section class="loginForm">
     <h1><%- title %></h1>
+    <% if (errors) { %>
+        <ul class="notice">
+            <% errors.array().forEach(error => { %>
+                <li><%- error.msg %></li>
+            <% }) %>
+        </ul>
+    <% } %>
     <%- messages() %>
-    <form action="" id="loginForm">
+    <form action="/account/login" id="loginForm" method="post">
         <label for="email">Email</label>
         <input type="email" name="account_email" id="email" required placeholder="Enter email">
         <label for="password">Password</label>
         <input type="password" name="account_password" id="password" required placeholder="Enter password" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}$">
         <button type="submit">Login</button>
-        <p>No account? <a href="/account/registration">Sign-up</a></p>
+        <p>No account? <a href="/account/register">Sign-up</a></p>
     </form>
 </section>
