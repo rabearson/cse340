@@ -109,7 +109,41 @@ validate.checkLogData = async (req, res, next) => {
             title: "Login",
             account_email,
         })
+        return
     }
+    next()
+}
+
+validate.addClassificationRules = function() {
+    return [
+        body("classification_name")
+        .trim()
+        .escape()
+        .isLength({
+            min: 2
+        })
+        .withMessage('Classification name must be at least 2 characters long.')
+        .notEmpty()
+        .withMessage('Classification name is required.')
+        .isAlpha()
+        .withMessage('Classification name can only contain alphabetic characters.')
+    ]
+}
+
+validate.checkaddClassification = async(req, res, next) => {
+    const {classification_name} = req.body
+    let nav = await utilities.getNav()
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        res.render("inventory/add-classification", {
+            errors,
+            nav,
+            title: "Add New Classification",
+            classification_name,
+        })
+        return
+    }
+    next()
 }
 
 module.exports = validate
