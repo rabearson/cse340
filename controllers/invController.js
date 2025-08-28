@@ -75,4 +75,16 @@ invCont.insertClassification = async(req, res) => {
     }
 }
 
+/* ****************************************
+*  Deliver add inventory view
+* *************************************** */
+invCont.deliverAddInvView = async(req, res) => {
+    let nav = await utilities.getNav()
+    res.render("inventory/add-inventory", {
+        title: "Add Vehicle",
+        nav,
+        errors: null,
+    })
+}
+
 module.exports = invCont

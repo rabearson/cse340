@@ -23,4 +23,7 @@ router.post("/add-classification",
     utilities.handleErrors(invController.insertClassification)
 )
 
+//route to add-inventory
+router.get("/add-inventory", utilities.handleErrors(invController.deliverAddInvView))
+
 module.exports = router
