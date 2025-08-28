@@ -601,3 +601,49 @@ li.valid::before {
     font-size: 1.12em;
     font-weight: 700;
   }
+  .management {
+    padding: 1rem;
+  }
+  .add-type a {
+    display: block;
+    padding: 0 12px;
+  }
+  .add-classification {
+    padding: 1rem;
+  }
+  #add-classification {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 19px 1rem;
+    background-color: #1E212B;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  #add-classification label{
+    margin-bottom: 7px;
+    font-weight: 700;
+  }
+   #add-classification input,
+   #add-classification button {
+    display: block;
+    margin-bottom: 8px;
+    border: none;
+    font-size: 16px;
+   }
+   #add-classification span {
+    margin-bottom: 8px;
+   }
+   #add-classification input {
+    outline: none;
+    padding: 10px 8px;
+   }
+   #add-classification button {
+    padding: 10px 8px;
+    cursor: pointer;
+    font-weight: bold;
+   }
+   #add-classification button:hover {
+    background-color: #4E5166;
+    color: white;
+   }
