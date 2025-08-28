@@ -1,0 +1,36 @@
+<section class="add-inventory">
+    <h1><%- title %></h1>
+    <form action="/inv/add-inventory" id="add-inventory" method="post">
+        <label for="inv_make">Make</label>
+        <input type="text" name="inv_make" id="inv_make" required pattern="[A-Za-z]{3,}"
+            placeholder="Min of 3 characters">
+
+        <label for="inv_model">Model</label>
+        <input type="text" name="inv_model" id="inv_model" required pattern="[a-zA-Z]{3,}"
+            placeholder="Min of 3 characters">
+
+        <label for="inv_description">Description</label>
+        <textarea name="inv_description" id="inv_description" required rows="10"></textarea>
+
+        <label for="inv_image">Image Path</label>
+        <input type="text" name="inv_image" id="inv_image" required placeholder="Enter image path (URL)">
+
+        <label for="inv_thumbnail">Thumbnail Path</label>
+        <input type="text" name="inv_thumbnail" id="inv_thumbnail" required placeholder="Enter thumbnail path (URL)">
+
+        <label for="inv_price">Price</label>
+        <input type="number" name="inv_price" id="inv_price" required placeholder="decimal or integer" step="any">
+
+        <label for="inv_year">Year</label>
+        <input type="text" name="inv_year" id="inv_year" pattern="\d{4}" required placeholder="4 digits only">
+
+        <label for="inv_miles">Miles</label>
+        <input type="number" name="inv_miles" id="inv_miles" required placeholder="digits only">
+
+        <label for="inv_color">Color</label>
+        <input type="text" name="inv_color" id="inv_color" required placeholder="Enter color">
+
+        <button type="submit">Add Vehicle</button>
+    </form>
+
+</section>

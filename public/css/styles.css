@@ -454,7 +454,8 @@ figure figcaption {
   width: 100%;
 }
 
-.loginForm h1, .registerForm h1{
+.loginForm h1,
+.registerForm h1 {
   padding: 1rem;
   text-align: center;
 }
@@ -468,7 +469,8 @@ figure figcaption {
   flex-direction: column;
 }
 
-#loginForm label, #registerForm label {
+#loginForm label,
+#registerForm label {
   margin-bottom: 7px;
   font-weight: 700;
 }
@@ -506,7 +508,8 @@ figure figcaption {
 
 }
 
-#loginForm button, #registerForm button {
+#loginForm button,
+#registerForm button {
   cursor: pointer;
   border: none;
   background-color: var(--primary-accent);
@@ -516,7 +519,8 @@ figure figcaption {
   font-weight: bold;
 }
 
-#loginForm button:hover, #registerForm button:hover {
+#loginForm button:hover,
+#registerForm button:hover {
   background-color: #2994ff;
   color: #000000;
 
@@ -564,9 +568,11 @@ li.valid::before {
   /* border-radius: 18px; */
   background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
+
 #registerForm input {
   outline: none;
 }
+
 #registerForm span {
   background-color: #000000;
   color: white;
@@ -575,75 +581,138 @@ li.valid::before {
   text-align: center;
   cursor: pointer;
   transition: transform .5s ease, background-color .5s ease, color .5s ease;
-  
+
 }
+
 #registerForm span:active {
   transform: scale(0.99);
   background-color: #292929;
   color: #d9d9d9;
 }
-  ul.notice {
-    background-color: #16d0ba;
-    text-align: center;
-    list-style: none;
-    padding: 1rem;
-    width: 100%;
-    font-size: 1.12em;
-    font-weight: 700;
-  }
-  ul.error {
-    background-color: #f9c3ef;
-    text-align: center;
-    list-style: none;
-    padding: 1rem;
-    color: #7e0202;
-    width: 100%;
-    font-size: 1.12em;
-    font-weight: 700;
-  }
-  .management {
-    padding: 1rem;
-  }
-  .add-type a {
-    display: block;
-    padding: 0 12px;
-  }
-  .add-classification {
-    padding: 1rem;
-  }
-  #add-classification {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 19px 1rem;
-    background-color: #1E212B;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-  }
-  #add-classification label{
-    margin-bottom: 7px;
-    font-weight: 700;
-  }
-   #add-classification input,
-   #add-classification button {
-    display: block;
-    margin-bottom: 8px;
-    border: none;
-    font-size: 16px;
-   }
-   #add-classification span {
-    margin-bottom: 8px;
-   }
-   #add-classification input {
-    outline: none;
-    padding: 10px 8px;
-   }
-   #add-classification button {
-    padding: 10px 8px;
-    cursor: pointer;
-    font-weight: bold;
-   }
-   #add-classification button:hover {
-    background-color: #4E5166;
-    color: white;
-   }
+
+ul.notice {
+  background-color: #16d0ba;
+  text-align: center;
+  list-style: none;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.12em;
+  font-weight: 700;
+}
+
+ul.error {
+  background-color: #f9c3ef;
+  text-align: center;
+  list-style: none;
+  padding: 1rem;
+  color: #7e0202;
+  width: 100%;
+  font-size: 1.12em;
+  font-weight: 700;
+}
+
+.management {
+  padding: 1rem;
+}
+
+.add-type a {
+  display: block;
+  padding: 0 12px;
+}
+
+.add-classification {
+  padding: 1rem;
+}
+
+#add-classification {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 19px 1rem;
+  background-color: #1E212B;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+#add-classification label {
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+#add-classification input,
+#add-classification button {
+  display: block;
+  margin-bottom: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+#add-classification span {
+  margin-bottom: 8px;
+}
+
+#add-classification input {
+  outline: none;
+  padding: 10px 8px;
+}
+
+#add-classification button {
+  padding: 10px 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#add-classification button:hover {
+  background-color: #4E5166;
+  color: white;
+}
+
+.add-inventory h1 {
+  padding: 1rem;
+}
+
+#add-inventory {
+  padding: 1rem;
+  width: 100%;
+  max-width: 450px;
+  margin: 2rem auto;
+  background-color: #BADEFC;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+#add-inventory * {
+  width: 100%;
+  display: block;
+}
+
+#add-inventory label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#add-inventory input {
+  margin-bottom: 11px;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+
+#add-inventory textarea {
+  resize: none;
+  margin-bottom: 11px;
+}
+
+#add-inventory button {
+  padding:.8rem;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #291720;
+  color: white;
+  cursor: pointer;
+}
+#add-inventory button:hover {
+  background-color: #F1E3F3;
+  color: black;
+}
