@@ -71,4 +71,18 @@ Util.buildVehicleDetail = async function (data) {
     return vehicle
 }
 
+Util.buildClassificationList = async function (classification_id = null) {
+    let data = await getClassification()
+    let classificationList = '<select name="classification_id" id="classificationList" required>'
+    classificationList += '<option value="">Choose a Classification</option>'
+    data.rows.forEach(row => {
+        classificationList += `
+        <option value="${row.classification_id}" ${row.classification_id != null && row.classification_id == classification_id ? "selected" : ""}>
+            ${row.classification_name}
+        </option>`
+    })
+    classificationList += '</select>'
+    return classificationList
+}
+
 module.exports = Util

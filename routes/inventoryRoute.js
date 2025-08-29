@@ -26,4 +26,7 @@ router.post("/add-classification",
 //route to add-inventory
 router.get("/add-inventory", utilities.handleErrors(invController.deliverAddInvView))
 
+//Route to process adding of vehicle
+router.post("/add-inventory", utilities.handleErrors(invController.addVehicle))
+
 module.exports = router
