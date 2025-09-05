@@ -19,6 +19,7 @@ const session  = require("express-session")
 const flash = require("connect-flash")
 const accountRoute = require("./routes/accountRoute")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 
 /* ***********************
@@ -43,6 +44,8 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+app.use(utilities.chekJWTToken)
 
 /* ***********************
  * View engine and template
